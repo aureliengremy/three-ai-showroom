@@ -7,19 +7,20 @@ import state from "../store/index";
 
 const ElementThreeDim = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF("./shirt_baked.glb");
-  // const { nodes, materials } = useGLTF("./guitar_pick.glb");
+  // const { nodes, materials } = useGLTF("./shirt_baked.glb");
+  const { nodes, materials } = useGLTF("./guitar_pick.glb");
 
-  // Some Logs : 
-  // console.log(nodes);
-  // console.log(materials);
+  // Some Logs :
+//   console.log(nodes);
+//   console.log(materials);
   // console.log(snap.color);
 
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
 
   useFrame((state, delta) => {
-    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
+    easing.dampC(materials.Plastic.color, snap.color, 0.25, delta);
+    // easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
   });
   const stateString = JSON.stringify(snap);
 
@@ -27,11 +28,14 @@ const ElementThreeDim = () => {
     <group key={stateString}>
       <mesh
         castShadow
-        geometry={nodes.T_Shirt_male.geometry}
-        // geometry={nodes.Guitar_Pick.geometry}
-        material={materials.lambert1}
-        material-roughness={-1}
+        // geometry={nodes.T_Shirt_male.geometry}
+        geometry={nodes.Guitar_Pick.geometry}
+
+        material={materials.Plastic}
+        // material={materials.lambert1}
+        // material-roughness={-1}
         dispose={null}
+        scale={40}
       >
         {snap.isFullTexture && (
           <Decal
