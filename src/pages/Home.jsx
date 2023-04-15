@@ -24,7 +24,6 @@ const Home = () => {
                 className="w-8 h-8 object-contain"
               />
             </motion.header>
-          </motion.section>
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <h1 className="head-text">
@@ -45,6 +44,7 @@ const Home = () => {
               />
             </motion.div>
           </motion.div>
+          </motion.section>
         </>
       )}
     </AnimatePresence>
