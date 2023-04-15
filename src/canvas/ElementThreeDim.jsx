@@ -9,12 +9,17 @@ const ElementThreeDim = () => {
   const snap = useSnapshot(state);
   const { nodes, materials } = useGLTF("./shirt_baked.glb");
   // const { nodes, materials } = useGLTF("./guitar_pick.glb");
+
+  // Some Logs : 
   // console.log(nodes);
+  // console.log(materials);
+  // console.log(snap.color);
+
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
 
   useFrame((state, delta) => {
-    easing.dampC(materials.lamber1.color, snap.color, 0.25, delta);
+    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
   });
   const stateString = JSON.stringify(snap);
 
