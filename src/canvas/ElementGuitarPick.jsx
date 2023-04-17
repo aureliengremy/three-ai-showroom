@@ -11,7 +11,8 @@ const ElementThreeDim = () => {
   const { nodes, materials } = useGLTF("./guitar_pick.glb");
 
   // Some Logs :
-//   console.log(nodes);
+  console.log(nodes.Scene.position);
+  console.log(nodes.Guitar_Pick);
 //   console.log(materials);
   // console.log(snap.color);
 
@@ -30,12 +31,13 @@ const ElementThreeDim = () => {
         castShadow
         // geometry={nodes.T_Shirt_male.geometry}
         geometry={nodes.Guitar_Pick.geometry}
-
+        // position={[0, -0.3, 1.6]}
+        rotation={[1, 0, 0.2]}
         material={materials.Plastic}
         // material={materials.lambert1}
         // material-roughness={-1}
         dispose={null}
-        scale={40}
+        scale={30}
       >
         {snap.isFullTexture && (
           <Decal
@@ -47,9 +49,9 @@ const ElementThreeDim = () => {
         )}
         {snap.isLogoTexture && (
           <Decal
-            position={[0, 0.04, 0.15]}
+            position={[0, 0, 0]}
             rotation={[0, 0, 0]}
-            scale={0.15}
+            scale={0.015}
             map={logoTexture}
             map-anisotropy={16}
             depthTest={false}
