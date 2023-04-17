@@ -9,8 +9,6 @@ const CameraRig = ({ children }) => {
   const group = useRef();
   const snap = useSnapshot(state);
 
-  // console.log(group);
-
   // set the camera rotation smoothly
   useFrame((state, delta) => {
     const isBreakpoint = window.innerWidth <= 1260;
