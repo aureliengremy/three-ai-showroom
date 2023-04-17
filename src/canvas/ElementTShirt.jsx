@@ -11,8 +11,8 @@ const ElementThreeDim = () => {
   // const { nodes, materials } = useGLTF("./guitar_pick.glb");
 
   // Some Logs :
-  console.log(nodes);
-  console.log(materials);
+  // console.log(nodes);
+  // console.log(materials);
   // console.log(snap.color);
 
   const logoTexture = useTexture(snap.logoDecal);

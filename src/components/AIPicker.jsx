@@ -2,7 +2,7 @@ import React from 'react'
 
 const AIPicker = () => {
   return (
-    <div>AIPicker</div>
+    <div className='absolute left-full ml-3'>AIPicker</div>
   )
 }
 
