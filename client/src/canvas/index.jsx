@@ -25,7 +25,7 @@ const CanvasModel = () => {
           <BackDrop />
             <Center>
               {/* <ModelComponent /> */}
-              <ElementTShirt />
+              <ElementGuitarPick />
             </Center>
         </CameraRig>
       </Canvas>
