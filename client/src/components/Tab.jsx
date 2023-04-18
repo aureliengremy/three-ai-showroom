@@ -8,8 +8,8 @@ const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
 
   const activeStyles =
     isFilterTab && isActiveTab
-      ? { backgroundColor: snap.color, opacity: 0.5 }
-      : { backgroundColor: "tranparent", opacity: 1 };
+      ? { backgroundColor: "tranparent", opacity: 0.5 }
+      : { backgroundColor: "tranparent", opacity: 1 }
 
   return (
     <div
