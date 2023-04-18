@@ -24,17 +24,17 @@ const Customizer = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [activeEditorTab, setActiveEditorTab] = useState("");
   const [activeFilterTab, setActiveFilterTab] = useState({
-    logoShirt: true,
-    stylishShirt: false,
+    logoPick: true,
+    stylishPick: false,
   });
 
   //show tab content depending on the activeTab
   const generateTabContent = () => {
     switch (activeEditorTab) {
       case "colorpicker":
-        return <ColorPicker />;
+        return <ColorPicker colorPicked={colorPicked} handleCloseTab={handleCloseTab}/>;
       case "filepicker":
-        return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
+        return <FilePicker file={file} setFile={setFile} readFile={readFile} handleCloseTab={handleCloseTab} />;
       case "aipicker":
         return <AIPicker 
           prompt={prompt}
@@ -87,10 +87,10 @@ const Customizer = () => {
 
   const handleActiveFilterTab = (tabName) => {
     switch (tabName) {
-      case "logoShirt":
+      case "logoPick":
         state.isLogoTexture = !activeFilterTab[tabName];
         break;
-      case "stylishShirt":
+      case "stylishPick":
         state.isFullTexture = !activeFilterTab[tabName];
         break;
       default:
@@ -106,6 +106,14 @@ const Customizer = () => {
      } 
     });
   };
+
+  const colorPicked = (color) => {
+    state.color = color.hex;
+  }
+  const handleCloseTab = () => {
+    console.log('click!');
+    setActiveEditorTab("");
+  }
 
   const readFile = (type) => {
     reader(file).then((result) => {
