@@ -1,1 +1,1 @@
-# three-ai-showroom
+# three-pick-showroom
