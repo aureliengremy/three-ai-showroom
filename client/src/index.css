@@ -62,6 +62,9 @@ html {
 .tab-btn {
   @apply w-14 h-14 flex justify-center items-center cursor-pointer select-none;
 }
+.tab-close-btn {
+  @apply absolute z-10 -left-3 -top-3 w-7 h-7 cursor-pointer select-none;
+}
 
 .glassmorphism {
   background: rgba(255, 255, 255, 0.25);
