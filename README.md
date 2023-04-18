@@ -4,6 +4,8 @@ Petit projet permettant de customiser un médiateur de guitare. Avec l'ajout de 
 
 Mon souhait serait de trouver le moyen de permettre la connection avec OpenAI-API sans que cela soit connecté à mon compte.
 
+### Live: [my-guitar-pick.net](https://my-guitar-pick.net)
+
 ## 🛠️ Tech Stack
 - [React](https://reactjs.org/)
 - [Vitejs](https://vitejs.dev/)
