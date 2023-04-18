@@ -19,7 +19,7 @@ const Home = () => {
           <motion.section className="home" {...slideAnimation("left")}>
             <motion.header {...slideAnimation("down")}>
               <img
-                src="./threejs.png"
+                src="./pick-logo-64.png"
                 alt="logo"
                 className="w-8 h-8 object-contain"
               />
@@ -27,7 +27,7 @@ const Home = () => {
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <h1 className="head-text">
-                LET'S <br className="xl:block hidden" /> DO IT.
+                PICK <br className="xl:block hidden" /> YOUR.
               </h1>
             </motion.div>
             <motion.div className="flex flex-col gap-5">
