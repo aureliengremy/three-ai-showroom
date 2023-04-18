@@ -1,9 +1,11 @@
 import React from "react";
 import CustomButton from "./CustomButton";
+import { closeIcone } from "../assets";
 
-const FilePicker = ({ file, setFile, readFile }) => {
+const FilePicker = ({ file, setFile, readFile, handleCloseTab }) => {
   return (
     <div className="filepicker-container">
+      <img src={closeIcone} className="tab-close-btn" onClick={() => handleCloseTab()}/>
       <div className="flex-1 flex flex-col">
         <input
           id="file-upload"
