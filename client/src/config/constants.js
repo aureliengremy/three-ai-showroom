@@ -1,4 +1,4 @@
-import { swatch, fileIcon, ai, logoShirt, stylishShirt } from "../assets";
+import { swatch, fileIcon, ai, logoPick, stylishPick } from "../assets";
 
 export const EditorTabs = [
   {
@@ -17,22 +17,22 @@ export const EditorTabs = [
 
 export const FilterTabs = [
   {
-    name: "logoShirt",
-    icon: logoShirt,
+    name: "logoPick",
+    icon: logoPick,
   },
   {
-    name: "stylishShirt",
-    icon: stylishShirt,
+    name: "stylishPick",
+    icon: stylishPick,
   },
 ];
 
 export const DecalTypes = {
   logo: {
     stateProperty: "logoDecal",
-    filterTab: "logoShirt",
+    filterTab: "logoPick",
   },
   full: {
     stateProperty: "fullDecal",
-    filterTab: "stylishShirt",
+    filterTab: "stylishPick",
   },
 };
