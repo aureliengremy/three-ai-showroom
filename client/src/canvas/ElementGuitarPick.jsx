@@ -7,7 +7,6 @@ import state from "../store/index";
 
 const ElementGuitarPick = () => {
   const snap = useSnapshot(state);
-  // const { nodes, materials } = useGLTF("./shirt_baked.glb");
   const { nodes, materials } = useGLTF("./guitar_pick.glb");
 
   // Some Logs :
@@ -21,7 +20,6 @@ const ElementGuitarPick = () => {
 
   useFrame((state, delta) => {
     easing.dampC(materials.Plectrum.color, snap.color, 0.25, delta);
-    // easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
   });
   const stateString = JSON.stringify(snap);
 
@@ -29,13 +27,11 @@ const ElementGuitarPick = () => {
     <group key={stateString}>
       <mesh
         castShadow
-        // geometry={nodes.T_Shirt_male.geometry}
+       
         geometry={nodes.Plectrum_Plectrum_0.geometry}
         position={[0, 0, 0]}
         rotation={[1.4, 0, 0]}
         material={materials.Plectrum}
-        // material={materials.lambert1}
-        // material-roughness={-1}
         dispose={null}
         scale={-0.5}
       >
@@ -49,12 +45,12 @@ const ElementGuitarPick = () => {
         )}
         {snap.isLogoTexture && (
           <Decal
-            // position={[0.01, -0.1, 0.10]}
-            position={[0, 0, 0]}
+            position={[0.01, -0.1, 0.10]}
+            // position={[0, 0, 0]}
             rotation={[1.54, 0, 0]}
             scale={0.40}
             map={logoTexture}
-            // map-anisotropy={16}
+            map-anisotropy={16}
             depthTest={false}
             depthWrite={true}
           />
