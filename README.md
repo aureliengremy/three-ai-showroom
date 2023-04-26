@@ -1,6 +1,6 @@
 # <p align="center">Three Guitar Pick Showroom</p>
   
-Petit projet permettant de customiser un médiateur de guitare. Avec l'ajout de logo, texture et ~~en utilisant le generateur d'image Dalle de chez OpenAI~~.
+Petit projet permettant de customiser un médiator de guitare. Avec l'ajout de logo, texture et ~~en utilisant le generateur d'image Dalle de chez OpenAI~~.
 
 Mon souhait serait de trouver le moyen de permettre la connection avec OpenAI-API sans que cela soit connecté à mon compte OpenAI personnel.
 
