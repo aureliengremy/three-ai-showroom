@@ -1,14 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
-import config from "../config/config";
+// import config from "../config/config";
 import state from "../store/index";
 import { download } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers";
 import { FilterTabs, EditorTabs, DecalTypes, } from "../config/constants";
 import { fadeAnimation, slideAnimation } from "../config/motion";
 import {
-  AIPicker,
   ColorPicker,
   CustomButton,
   FilePicker,
@@ -21,7 +20,6 @@ const Customizer = () => {
 
   const [file, setFile] = useState("");
   const [prompt, setPrompt] = useState("");
-  const [generatingImg, setGeneratingImg] = useState(false);
   const [activeEditorTab, setActiveEditorTab] = useState("");
   const [activeFilterTab, setActiveFilterTab] = useState({
     logoPick: true,
@@ -35,44 +33,10 @@ const Customizer = () => {
         return <ColorPicker colorPicked={colorPicked} handleCloseTab={handleCloseTab}/>;
       case "filepicker":
         return <FilePicker file={file} setFile={setFile} readFile={readFile} handleCloseTab={handleCloseTab} />;
-      case "aipicker":
-        return <AIPicker 
-          prompt={prompt}
-          setPrompt={setPrompt}
-          generatingImg={generatingImg}
-          handleSubmit={handleSubmit}
-          />;
       default:
         return null;
     }
   };
-  const handleSubmit = async (type) => {
-    if(!prompt) return alert('Please enter a prompt');
-
-    try {
-      setGeneratingImg(true);
-      const response = await fetch(`http://localhost:8080/api/v1/dalle`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          prompt,
-        })
-      })
-
-      const data = await response.json();
-      console.log(data);
-
-      handleDecals(type, `data:image/png;base64,${data.photo}`)
-
-    } catch (error) {
-      alert(error)
-    } finally {
-      setGeneratingImg(false);
-      setActiveEditorTab("");
-    }
-  }
 
   const handleDecals = (type, result) => {
     
