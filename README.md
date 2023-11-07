@@ -12,7 +12,6 @@ Mon souhait serait de trouver le moyen de permettre la connection avec OpenAI-AP
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Framer Motion](https://www.framer.com/motion/)
 
 ## Instructions d'utilisation
 
